@@ -1,0 +1,30 @@
+<nav itemscope itemtype="https://schema.org/LocalBusiness" aria-label="breadcrumb">
+  <ol id="breadcrumb" class="breadcrumb pt-3">
+    <li class="breadcrumb-item"><a href="/" itemprop="url">Home</a></li>
+    <li class="breadcrumb-item"><a href="about.html" itemprop="url">About</a></li>
+    <li class="breadcrumb-item"><a href="service-details.html" itemprop="url">Services</a></li>
+    <li class="breadcrumb-item"><a href="projects.html" itemprop="url">Projects</a></li>
+    <li class="breadcrumb-item"><a href="contact.html" itemprop="url">Contact</a></li>
+  </ol>
+</nav>
+
+<script>
+  // Get the current page URL
+  var currentPageUrl = window.location.href;
+
+  // Get all breadcrumb links
+  var breadcrumbLinks = document.querySelectorAll('#breadcrumb li a');
+
+  // Iterate over each breadcrumb link
+  breadcrumbLinks.forEach(function(link) {
+    // Check if the link URL matches the current page URL
+    if (link.href === currentPageUrl) {
+      // Add the 'active' class to the parent list item
+      link.parentNode.classList.add('active');
+
+      // Remove the anchor tag from the link
+      var linkText = link.textContent;
+      link.parentNode.innerHTML = linkText;
+    }
+  });
+</script>

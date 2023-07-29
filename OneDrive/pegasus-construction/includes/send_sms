@@ -1,0 +1,30 @@
+<?php
+// Twilio configuration
+$accountSid = 'YOUR_TWILIO_ACCOUNT_SID';  // Replace with your Twilio account SID
+$authToken = 'YOUR_TWILIO_AUTH_TOKEN';    // Replace with your Twilio auth token
+$twilioNumber = 'YOUR_TWILIO_PHONE_NUMBER'; // Replace with your Twilio phone number
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $name = $_POST['name'];
+  $phone = $_POST['phone'];
+  $message = $_POST['message'];
+
+  require_once 'path/to/twilio-php/autoload.php';
+
+  $client = new Twilio\Rest\Client($accountSid, $authToken);
+
+  $message = $client->messages->create(
+    $phone, // Recipient's phone number
+    array(
+      'from' => $twilioNumber,
+      'body' => "Message from $name:\n$message"
+    )
+  );
+
+  if ($message->sid) {
+    echo 'SMS sent successfully!';
+  } else {
+    echo 'Failed to send SMS. Please try again.';
+  }
+}
+?>

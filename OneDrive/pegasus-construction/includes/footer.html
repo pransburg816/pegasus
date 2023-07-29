@@ -1,0 +1,99 @@
+    <!-- ======= Footer ======= -->
+    <div class="footer p-0" itemscope itemtype="https://schema.org/LocalBusiness">
+      <div class="footer-content position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+              <div class="footer-info">
+                <div class="container p-0">
+                  <div class="pt-5">
+                    <div class="text">
+                      <h2 class="text-white" style="font-size: 1.5rem" itemprop="name">PEGASUS CONSTRUCTION SERVICES</h2>
+                      <p itemprop="address">11880 W 95th St #1120</p>
+                      <p itemprop="address">Overland Park, KS. 66214</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End footer info column-->
+
+            <div class="col-lg-2 col-md-6 footer-links pt-5">
+              <h4><a class="text-white text-uppercase" href="/" itemprop="url">Pegasus Construction</a></h4>
+              <h4><a class="text-white text-uppercase" href="about.html" itemprop="url">About</a></h4>
+              <h4><a class="text-white text-uppercase" href="service-details.html" itemprop="url">Services</a></h4>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links pt-5">
+              <h4><a class="text-white text-uppercase" href="projects.html" itemprop="url">Projects</a></h4>
+              <h4><a class="text-white text-uppercase" href="contact.html" itemprop="url">Contact</a></h4>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links pt-5">
+              <h3>Connect With Us</h3>
+              <p>
+                <strong>Phone:</strong> <span id="protected-phone" itemprop="telephone"></span><br>
+                <strong>Email:</strong> <span id="protected-email" itemprop="email"></span><br>
+              </p>
+              <!-- <div class="social-links d-flex mt-3">
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+              </div> -->
+            </div>
+
+          </div>
+        </div>
+      </div><!-- End footer content -->
+
+      <div class="footer-legal text-center position-relative">
+        <div class="container">
+          <div class="copyright pt-3 pb-3">
+            &copy;2023 Copyright
+            <strong><span style="color: #4a8cff" itemprop="legalName">Pegasus</span> Construction Services</strong>.
+            All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div><!-- End Footer ID -->
+
+    <!-- Vendor JS Files -->
+    <!-- <script data-cfasync="false" src="https://bootstrapmade.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+    <script src="https://bootstrapmade.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://bootstrapmade.com/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script type="text/javascript">
+      // JavaScript function to generate the protected email address
+      function generateProtectedEmail() {
+        var user = "pegasusllc.chino";
+        var domain = "gmail.com";
+        var element = document.getElementById("protected-email");
+        element.innerHTML = '<a href="mailto:' + user + '&#64;' + domain + '">' + user + '&#64;' + domain + '</a>';
+      }
+
+      // Call the function to generate the protected email address
+      generateProtectedEmail();
+
+       // JavaScript function to obfuscate the phone number
+        function obfuscatePhoneNumber() {
+          var phoneNumber = "913-963-4841";
+          var obfuscatedNumber = "";
+          for (var i = 0; i < phoneNumber.length; i++) {
+            obfuscatedNumber += "&#x" + phoneNumber.charCodeAt(i).toString(16) + ";";
+          }
+          var element = document.getElementById("protected-phone");
+          element.innerHTML = obfuscatedNumber;
+        }
+
+        // Call the function to obfuscate the phone number
+        obfuscatePhoneNumber();
+    </script>
+    
+    <!-- Start of HubSpot Embed Code
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/39738986.js"></script>
+    End of HubSpot Embed Code -->
+  </body>
+</html>
+
+
+
+ 

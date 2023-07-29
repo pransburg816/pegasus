@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password-Protected Page</title>
+</head>
+<body>
+
+<?php
+session_start();
+
+$validPasswords = array(
+  'password1',
+  'password2',
+  // Add more passcodes if needed
+);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $password = $_POST['password'];
+  
+  if (in_array($password, $validPasswords)) {
+    $_SESSION['authenticated'] = true;
+    header("Location: download.html"); // Redirect to download.html after successful login
+    exit;
+  } else {
+    $errorMessage = 'Invalid password. Please try again.';
+  }
+}
+
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+  // User is not authenticated, show the login form
+  ?>
+
+  <h1>Login</h1>
+  <?php if (isset($errorMessage)) : ?>
+    <p><?php echo $errorMessage; ?></p>
+  <?php endif; ?>
+  <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">Login</button>
+  </form>
+
+  <?php
+  exit;
+}
+?>
+
+</body>
+</html>
